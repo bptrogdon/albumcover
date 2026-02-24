@@ -1,0 +1,96 @@
+:root {
+    --bg-color: #1a1a17; /* Dark charcoal */
+    --accent-organic: #9dad7f; /* Muted sage/moss */
+    --text-pink: #ffb7c5; /* Pink from your first pass */
+}
+
+body {
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.album-canvas {
+    width: 600px;
+    height: 600px;
+    background-color: var(--bg-color);
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #000;
+}
+
+/* Texture overlay for that "Bong Rodent" lo-fi grit */
+.grain {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    opacity: 0.15;
+    pointer-events: none;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+}
+
+.sidebar {
+    font-size: 14px;
+    line-height: 0.85;
+    word-break: break-all;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 10px;
+    opacity: 0.8;
+}
+
+.left-text {
+    color: var(--text-pink);
+    text-align: left;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.right-text {
+    color: var(--accent-organic);
+    text-align: right;
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.abstract-graphic {
+    width: 250px;
+    height: 350px;
+    background: var(--accent-organic);
+    filter: contrast(150%) grayscale(100%) invert(1);
+    opacity: 0.3;
+    /* This creates a glitchy, architectural silhouette */
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.main-title {
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: -50px;
+    letter-spacing: -2px;
+    mix-blend-mode: difference;
+}
+
+.catalog-number {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-family: monospace;
+}
